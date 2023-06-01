@@ -160,7 +160,7 @@ echo
 echo -e "\e[92m               Finished\e[0m"
 echo
 echo -e "\e[36m          Sync statistic site:\e[0m"
-echo -e "\e[36m          http://xcv.vc/sync\e[0m"
+echo -e "\e[36m          http://www.xcv.vc/sync/\e[0m"
 echo
 echo -e "\e[36m----------------------------------------\e[0m"
 echo

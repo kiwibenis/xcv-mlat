@@ -149,7 +149,7 @@ echo
 sudo chmod +x /usr/local/share/adsbexchange/xcv-mlat.sh
 sudo systemctl start xcv-mlat.service && systemctl enable xcv-mlat.service
 
-echo -e "\e[92mServiec started.\e[0m"
+echo -e "\e[92mService started.\e[0m"
 
 ##########
 # Finish #

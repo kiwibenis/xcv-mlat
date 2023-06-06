@@ -133,7 +133,15 @@ sudo sed --follow-symlinks -i -e '/^JSON_OPTIONS=.*/d' /etc/default/xcv-mlat
 echo -e "\e[36m=>\e[0m Setting server and port ..."
 sudo sed --follow-symlinks -i -e 's/^MLATSERVER=.*/MLATSERVER="xcv.vc:3000"/g' /etc/default/xcv-mlat
 
-echo -e "\e[Configuration done.\e[0m"
+if ( ! whiptail --title "Coverage Enhancement" --yesno "To be able to see the coverage it would be great if you allow to show the location of your station on a map, only accurate to 10 km and not precise." 10 58 ); then
+  sudo sed --follow-symlinks -i -e 's/^PRIVACY=.*/PRIVACY="--privacy"/g' /etc/default/xcv-mlat
+  echo -e "\e[36m=>\e[0m Sad noises. The feeder will not be shown on the map :("
+else
+  sudo sed --follow-symlinks -i -e 's/^PRIVACY=.*/PRIVACY=""/g' /etc/default/xcv-mlat
+  echo -e "\e[36m=>\e[0m Thank you! The feeder location will be shown approximately on the map."
+fi
+
+echo -e "\e[92mConfiguration done.\e[0m"
 
 ######################
 # Service enablement #
@@ -157,10 +165,10 @@ echo -e "\e[92mService started.\e[0m"
 echo
 echo -e "\e[36m----------------------------------------\e[0m"
 echo
-echo -e "\e[92m               Finished\e[0m"
+echo -e "\e[92m                Finished\e[0m"
 echo
 echo -e "\e[36m          Sync statistic site:\e[0m"
-echo -e "\e[36m          http://www.xcv.vc/sync/\e[0m"
+echo -e "\e[1;35m           http://xcv.vc/sync\e[0m"
 echo
 echo -e "\e[36m----------------------------------------\e[0m"
 echo

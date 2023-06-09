@@ -6,3 +6,9 @@ Install with:
 ```
 sudo bash -c "$(curl -L -s -o - https://raw.githubusercontent.com/afe1520860/xcv-mlat/main/xcvMLATinstall.sh)"
 ```
+
+Uninstall with:
+
+```
+sudo bash -c "$(curl -L -s -o - https://raw.githubusercontent.com/afe1520860/xcv-mlat/main/xcvMLATuninstall.sh)"
+```
